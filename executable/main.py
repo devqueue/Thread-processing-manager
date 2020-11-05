@@ -79,7 +79,6 @@ def alert():
             time_elapsed = time.time() - start
 
     if  __name__ == "__main__":
-        pyautogui.alert("Your Java update is now complete")
         while True:
             move_mouse(120)
             time.sleep(3)
