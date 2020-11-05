@@ -1,4 +1,10 @@
-# Self-replicating-code
+# Thread-processing-manager
 
-Python is an interpreted language and writing malicious code in python is not the best idea as it can be read in any text editor, But this script is just to demonstrate that it can be done if the user is naive enough to run the script without reading into it.
-Note that this is for educational purposes only
+This is a python code which helps manage your background processes a lot more efficiently 
+Keep this script running in the background and it will automatically manage your resources 
+using threading.
+
+---
+1. Download the script and keep it in your desired folder with other python scripts
+2. Run the script 
+3. Enjoy!
