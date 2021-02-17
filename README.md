@@ -1,11 +1,8 @@
 # Thread-processing-manager
 
-This is a python code which helps manage your background processes a lot more efficiently 
-Keep this script running in the background and it will automatically manage your resources 
-using threading.
+This is a python code which is useless and can be used to annoy a user. It will spam a bunch of browser tabs, play high frequency beeps, moves the mouse randomly all at once using threading.
+Watch the following videos to see how to build this:
+https://youtu.be/4NcSpu1z0RU
 
 
-## How To use?
-1. Download the script and keep it in your desired folder with other python scripts
-2. Run the script 
-3. Enjoy!
+
